@@ -1,4 +1,4 @@
-# Work Day Scheduler Starter Code
+# Work Day Scheduler
 ![](assets/readme/screenshot.jpg)
 
 ## Features
