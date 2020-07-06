@@ -12,12 +12,11 @@ if(data) {
     localStorage.removeItem('workDaySchedData');
   }
 }
-if(!data) {
-  data = {
-    dayStamp: moment(`${WORKDAY_START_HOUR}:00:00.0`, 'HH:mm:ss.S'),
-    tasks: []
+if(!data) data = {
+  dayStamp: moment(`${WORKDAY_START_HOUR}:00:00.0`, 'HH:mm:ss.S'),
+  tasks: []
   };
-}
+
 // show current day
 $('#current-day').text(moment().format('dddd[,] MMMM Do YYYY'));
 // generate schedule UI
@@ -66,9 +65,10 @@ function generateScheduleInterface(container) {
   }
   updateUIBackground();
 }
+
 let timeBlockContainer = $('#time-block-container');
 generateScheduleInterface(timeBlockContainer);
-let refreshId = window.setInterval(updateUIBackground, 1000 * 60 * 15);// handle save buttons
+let refreshId = window.setInterval(updateUIBackground, 1000 * 60 * 15);
 
 $(timeBlockContainer).on('click', 'button', function (event) {
   let row = $(this).closest('div.row');
